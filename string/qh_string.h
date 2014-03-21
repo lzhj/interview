@@ -24,11 +24,13 @@ namespace qh
         const char* c_str() const;
 
         // set & get
-        char* operator[](size_t index);
+        char& operator[](size_t index);
+        const char& operator[](size_t index) const;
 
     private:
         char*  data_;
         size_t len_;
+        void init();
     };
 }
 
