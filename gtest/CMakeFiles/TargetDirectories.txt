@@ -1,0 +1,2 @@
+/home/gruby/practice/interview/gtest/CMakeFiles/gtest.dir
+/home/gruby/practice/interview/gtest/CMakeFiles/gtest_main.dir
