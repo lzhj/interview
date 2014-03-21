@@ -2,6 +2,7 @@
 #define QIHOO_STRING_H_
 
 #include <stdlib.h>
+#include <iostream>
 
 namespace qh
 {
@@ -27,6 +28,8 @@ namespace qh
         char& operator[](size_t index);
         const char& operator[](size_t index) const;
 
+        //friend std::ostream& operator<< (std::ostream&, const string&);
+        //friend bool operator== (const string&, const string&);
     private:
         char*  data_;
         size_t len_;
