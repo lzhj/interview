@@ -1,7 +1,5 @@
-string 工程
+#Unit test : google test
+#please install yourself
+#compile & run
+#g++ -I${GTEST_DIR}/include/ -pthread main.cc qh_string_test.cpp qh_string.cc ../gtest/libgtest.a -o string_test
 
-请实现std::string类的主要功能。函数声明以及写作头文件中。部分实现也做了，但可能不完全正确。
-
-请面试者实现这个类，并补充尽可能详尽的单元测试用例，越多越好，代码逻辑路径覆盖越全越好。
-
-请认真对待，仔细考虑每一个细节问题。
