@@ -1,5 +1,4 @@
 #include "qh_string.h"
-
 #include <string.h>
 
 namespace qh
@@ -16,7 +15,7 @@ namespace qh
         if(!s){
            init();
         }else{
-            int len = stlen(s);
+            int len = strlen(s);
             data_ = new char[len+1];
             strcpy(data_, s);
             len_ = len;
@@ -46,10 +45,14 @@ namespace qh
 
     string::string( const string& rhs )
     {
-        size_t len_rhs = strlen(rhs.data_);
-        data_ = new char[len_rhs+1];
-        strcpy(data_, rhs.data_);
-        len_ = len_rhs;
+        if(rhs.len_ == 0){
+            init();
+        }else{
+            size_t len_rhs = strlen(rhs.data_);
+            data_ = new char[len_rhs+1];
+            strcpy(data_, rhs.data_);
+            len_ = len_rhs;
+        }
     }
 
     string& string::operator=( const string& rhs )
@@ -94,6 +97,20 @@ namespace qh
     {
         return data_[index];
     }
+    /*
+    std::ostream& string::operator<< (std::ostream& os, const string& rhs)
+    {
+        os << rhs.data_;
+        return os;
+    }
+    */
+    /*
+    bool string::operator== (const string &s, const string &t)
+    {
+        if(strcmp(s.data_, t.data_) == 0)
+            return true;
+        return false;
+    }*/
     void string::init()
     {
         data_ = new char[0];
