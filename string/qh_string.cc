@@ -34,9 +34,12 @@ namespace qh
                 strncpy(data_, s, len);
                 len_ = len;
             }else{
-                data_ = new char[len_s+1];
+                data_ = new char[len+1];
                 strcpy(data_, s);
-                len_ = len_s;
+                for(size_t i = len_s; i < len+1; ++i){
+                    data_[i] = '\0';
+                }
+                len_ = len;
             }
         }
     }
